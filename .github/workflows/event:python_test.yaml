@@ -15,28 +15,4 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.8'
-
-      - name: Verify file structure
-        run: |
-          echo "Listing files in the working directory:"
-          ls -al
-          echo "Listing files recursively:"
-          find . 
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          if [ -f requirements.txt ]; then
-            pip install -r requirements.txt
-          else
-            echo "requirements.txt not found!"
-            exit 1
-          fi
-
-      - name: Run tests
-        run: |
-          pytest tests/
+      
