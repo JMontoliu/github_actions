@@ -23,3 +23,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Run tests
+        run: |
+          python -m unittest discover -s tests
+          # or use pytest if you prefer
+          # pytest tests
+      - name: Build Docker image
+        run: |
+          docker build -t calculator .
+      - name: Run Docker container
+        run: |
+          docker run --rm calculator
