@@ -9,3 +9,14 @@ jobs:
     steps:
       - name: Hello world
         run: echo "Hello, world!"
+      - name: Hello maquina
+        run: echo "Hello, maquina!"
+  say_bye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: bye world
+        run: echo "bye, world!"
+      - name: bye maquina
+        run: echo "bye, maquina!"
+  
+
