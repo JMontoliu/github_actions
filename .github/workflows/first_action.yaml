@@ -29,6 +29,6 @@ jobs:
       - name: bye world
         run: echo "bye, world!"
       - name: bye maquina
-        run: echo "bye, maquina!"
+        run: echo ${{ github.event.inputs.debug_mode }}
   
 
