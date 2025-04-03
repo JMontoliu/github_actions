@@ -29,7 +29,13 @@ jobs:
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=88 --statistics
 
       - name: Run tests
+        run: python -m unittest discover -s code/python -p "test_*.py"
+
+      - name: Run linters
         run: |
-          python -m unittest discover -s tests
-          # or use pytest if you prefer
-          # pytest tests
+          flake8 code/python
+      
+      - name: Run security checks
+        run: |
+          bandit -r code/python
+
