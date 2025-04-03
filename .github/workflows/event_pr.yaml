@@ -1,11 +1,16 @@
-name: Event PR - Single Job222222
+name: Event PR - Single Job
 
 on:
   pull_request:
-    branches:
-      - 'main'
+    types: [labeled, unlabeled]
 
 jobs:
+  labeling:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Labeling
+        run: echo "Labeling event triggered!"
+
   hello-world:
     runs-on: ubuntu-latest
     steps:
