@@ -1,0 +1,25 @@
+name: Event Commit - Single Job
+
+on:
+  push:
+    branches:
+      - 'main'
+  workflow_dispatch:
+    inputs:
+      debug_mode:
+        type: boolean
+        description: 'Debug mode'
+        default: false
+        required: false
+      sample_value:
+        type: string
+        description: 'cualquier valor'
+        default: ''
+        required: false
+  
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello world
+        run: echo "Hello, world!"
