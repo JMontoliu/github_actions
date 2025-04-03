@@ -8,8 +8,12 @@ jobs:
   labeling:
     runs-on: ubuntu-latest
     steps:
-      - name: Labeling
-        run: echo "Labeling event triggered!"
+      - name: Print event information
+        run: |
+          echo "Labeling event triggered!"
+          echo "Action: ${{ github.event.action }}"
+          echo "Label: ${{ github.event.label.name }}"
+          echo "PR Number: ${{ github.event.pull_request.number }}"
 
   hello-world:
     runs-on: ubuntu-latest
